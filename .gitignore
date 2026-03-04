@@ -1,0 +1,226 @@
+# Data (do not upload raw datasets)
+data/
+
+# Trained models (optional: do not upload pickles)
+models/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log# Data (do not upload raw datasets)
+data/
+
+# Trained models (optional: do not upload pickles)
+models/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log# Data (do not upload raw datasets)
+data/
+
+# Trained models (optional: do not upload pickles)
+models/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log# Data (do not upload raw datasets)
+data/
+
+# Trained models (optional: do not upload pickles)
+models/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log# Data (do not upload raw datasets)
+data/
+
+# Trained models (optional: do not upload pickles)
+models/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log# Data (do not upload raw datasets)
+data/
+
+# Trained models (optional: do not upload pickles)
+models/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log# Data (do not upload raw datasets)
+data/
+
+# Trained models (optional: do not upload pickles)
+models/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log# Data (do not upload raw datasets)
+data/
+
+# Trained models (optional: do not upload pickles)
+models/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log# Data (do not upload raw datasets)
+data/
+
+# Trained models (optional: do not upload pickles)
+models/*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+.venv
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
