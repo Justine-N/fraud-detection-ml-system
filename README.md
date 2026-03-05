@@ -44,7 +44,11 @@ Champion model selection
 Utility-based threshold optimization
 
 Drift detection and retraining governance
+## System Architecture
 
+![Fraud Detection Architecture](fraud-detection-ml-system.png)
+
+The diagram above illustrates the end-to-end fraud detection pipeline including feature engineering, model scoring, threshold optimization, decision logic, monitoring, and automated retraining triggers.
 Explainable AI analysis
 
 Real-time scoring API deployment
@@ -158,4 +162,5 @@ Feature store integration
 Monitoring dashboards
 
 Model versioning
+
 
