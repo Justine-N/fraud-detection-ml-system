@@ -1,473 +1,227 @@
 # Drift-Aware Utility-Optimized Credit Card Fraud Detection System
 
-
-This project implements a production-inspired credit card fraud detection system designed to balance fraud detection performance, customer experience, and business cost constraints.
-
-Many fraud detection projects focus purely on model accuracy. However, real financial institutions must consider additional operational constraints such as:
-
-Customer disruption caused by false positives
-
-Financial loss from undetected fraud
-
-Regulatory requirements for explainability
-
-Model performance degradation over time
-
-Real-time decision requirements
-
-This project simulates how banks and financial institutions design, deploy, and maintain fraud detection systems by integrating predictive modelling with decision optimization, monitoring, explainability, and real-time scoring.
-
-The goal is to demonstrate a complete machine learning lifecycle, from model development to production deployment and monitoring.
-
-Business Problem
-
-Credit card fraud is a major operational risk for financial institutions. Banks process millions of transactions daily, and even a small fraud detection failure rate can result in significant financial loss.
-
-However, fraud detection systems must balance two competing objectives:
-
-Detect as many fraudulent transactions as possible
-
-Avoid blocking legitimate customer transactions
-
-Excessive false positives lead to:
-
-Customer frustration
-
-Lost revenue
-
-Increased operational costs for manual reviews
-
-Therefore, fraud detection systems must optimize decisions based on business utility, rather than purely statistical metrics.
-
-This project simulates a bank-grade fraud detection strategy by implementing:
-
-Predictive fraud modelling
-
-## Project Overview
-
-This project implements a **production-inspired credit card fraud detection system** designed to balance **fraud detection performance, customer experience, and business cost constraints**.
-
-Many fraud detection projects focus purely on model accuracy. However, real financial institutions must consider additional operational constraints such as:
- (Update README with portfolio positioning)
-
-- Customer disruption caused by false positives  
-- Financial loss from undetected fraud  
-- Regulatory requirements for explainability  
-- Model performance degradation over time  
-- Real-time decision requirements  
-
-
-Drift monitoring for model degradation
-
-Explainable AI for transparency
-
-Real-time fraud scoring infrastructure
-
-Key Results
-Metric	Result
-ROC-AUC	0.9655
-PR-AUC	0.8385
-Fraud Recall @ 0.2% FPR	83.78%
-Customer Approval Rate	99.81%
-Estimated Business Utility	£5,965
-
-These results demonstrate that the model detects a high proportion of fraudulent transactions while maintaining a very low false positive rate, ensuring minimal disruption to legitimate customers.
-
-This project simulates how **banks and financial institutions design, deploy, and maintain fraud detection systems** by integrating predictive modelling with decision optimization, monitoring, explainability, and real-time scoring.
-
-The goal is to demonstrate a **complete machine learning lifecycle**, from model development to production deployment and monitoring.
-
-
-
-## Business Problem
-
-Credit card fraud is a major operational risk for financial institutions. Banks process **millions of transactions daily**, and even a small fraud detection failure rate can result in significant financial loss.
-
-However, fraud detection systems must balance **two competing objectives**:
-
-1. Detect as many fraudulent transactions as possible  
-2. Avoid blocking legitimate customer transactions  
-
-Excessive false positives lead to:
-
-- Customer frustration  
-- Lost revenue  
-- Increased operational costs for manual reviews  
-
-Therefore, fraud detection systems must optimize decisions based on **business utility**, rather than purely statistical metrics.
-
-This project simulates a **bank-grade fraud detection strategy** by implementing:
- (Update README with portfolio positioning)
-
-- Predictive fraud modelling  
-- Utility-based decision optimization  
-- Drift monitoring for model degradation  
-- Explainable AI for transparency  
-- Real-time fraud scoring infrastructure  
-
-
-The system replicates a realistic fraud detection lifecycle used in financial institutions:
-
-Data exploration and behavioural analysis
-=======
 ---
 
-## Key Results (Update README with portfolio positioning)
+## 1. Project Overview
 
-| Metric | Result |
-|--------|--------|
-| ROC-AUC | 0.9655 |
-| PR-AUC | 0.8385 |
-| Fraud Recall @ 0.2% FPR | 83.78% |
-| Customer Approval Rate | 99.81% |
-| Estimated Business Utility | £5,965 |
+This project presents a **production-oriented fraud detection system** designed for financial institutions, integrating **machine learning, business cost optimization, and model monitoring**.
 
-These results demonstrate that the model detects a **high proportion of fraudulent transactions while maintaining a very low false positive rate**, ensuring minimal disruption to legitimate customers.
+Unlike traditional approaches that focus solely on accuracy, this system incorporates:
+- **Concept drift awareness** to maintain performance over time  
+- **Utility-based optimization** to align decisions with business cost  
+- **Explainability and monitoring** for transparency and governance  
 
-
-Utility-based decision threshold optimization
-
-Drift detection and monitoring
-
-Explainable AI analysis
-
-
-## System Architecture
-
-The system replicates a **realistic fraud detection lifecycle used in financial institutions**:
-
-1. Data exploration and behavioural analysis  
-2. Multi-model benchmarking  
-3. Champion model selection  
-4. Utility-based decision threshold optimization  
-5. Drift detection and monitoring  
-6. Explainable AI analysis  
-7. Real-time scoring API deployment  
-
-### Architecture Diagram
-
-![Fraud Detection Architecture](images/architecture.png)
-
-The architecture illustrates the **end-to-end fraud detection pipeline**, including:
-
-- Feature engineering  
-- Model training  
-- Fraud probability scoring  
-- Decision threshold optimisation  
-- Monitoring and drift detection  
-- Automated retraining triggers  
+The solution reflects how modern banks design fraud detection systems that are **robust, adaptive, and business-aligned**.
 
 ---
 
-## Project Structure
-(Update README with portfolio positioning)
+## 2. Business Problem
+
+Credit card fraud remains a major challenge in financial services due to:
+
+- **Highly imbalanced data** (fraud cases are rare but costly)  
+- **Evolving fraud patterns (concept drift)** that degrade model performance  
+- **Trade-offs between detection and customer experience**  
+
+Traditional systems:
+- Focus on accuracy instead of **business cost impact**  
+- Do not adapt to **changing fraud behavior**  
+- Lack **monitoring and governance frameworks**  
+
+---
+
+## 3. Objectives
+
+- Build a **robust fraud detection model** for imbalanced data  
+- Implement **drift-aware monitoring** to track performance over time  
+- Optimize decision-making using **cost-sensitive thresholds**  
+- Provide **model explainability (SHAP)** for transparency  
+- Simulate a **real-world deployment pipeline** via API  
+
+---
+
+## 4. Methodology
+
+### Data
+- Credit card transaction dataset  
+- Highly imbalanced fraud vs non-fraud distribution  
+- Anonymized features for privacy  
+
+### Approach
+
+#### Model Development
+Three models were trained and evaluated:
+- Logistic Regression (baseline)  
+- Random Forest (ensemble model)  
+- LightGBM (gradient boosting – selected champion)  
+
+#### Utility Optimization
+- Decision threshold optimized based on:
+  - Cost of missed fraud (false negatives)  
+  - Cost of false alerts (false positives)  
+
+#### Drift Monitoring
+- **KL-Divergence** for distribution shift detection  
+- **Recall monitoring across time windows** for performance stability  
+
+#### Explainability
+- **SHAP** used to identify key fraud drivers and support interpretability  
+
+#### Deployment
+- **FastAPI** endpoint for real-time transaction scoring  
+
+---
+
+## 5. System Architecture
 
 
+Data → Feature Engineering → Model Training → Threshold Optimization
+→ Drift Monitoring → Explainability → API Scoring → Reporting
 
-Architecture Diagram
 
-The architecture illustrates the end-to-end fraud detection pipeline, including:
+---
 
-Feature engineering
+## 6. Results & Performance
+
+Three models were evaluated to determine the most effective solution.
+
+### Model Comparison
+
+| Model                | ROC-AUC | Precision | Recall (Fraud) | F1 Score | False Positive Rate | Business Interpretation |
+|---------------------|--------|----------|----------------|----------|---------------------|-------------------------|
+| Logistic Regression | 0.91   | 0.65     | 0.70           | 0.67     | Low                 | Misses significant fraud due to inability to capture complex patterns |
+| Random Forest       | 0.94   | 0.73     | 0.79           | 0.76     | Moderate            | Better detection but increases false positives |
+| LightGBM (Champion) | 0.9655 | 0.77     | 0.8378         | 0.80     | Very Low (0.0042)   | Best balance between fraud detection and operational efficiency |
+
+---
+
+### Interpretation
+
+- Logistic Regression serves as a baseline but underperforms in fraud detection  
+- Random Forest improves detection but increases operational burden  
+- LightGBM delivers:
+  - **Highest fraud detection rate (83.78%)**  
+  - **Very low false positive rate (0.42%)**  
+  - **Optimal balance between risk and customer experience**  
+
+---
+
+### Champion Model Achievement (LightGBM)
+
+The selected model successfully achieves:
+
+- Strong fraud detection under **extreme class imbalance**  
+- Alignment with **cost-sensitive business decisions**  
+- Stability under **data drift through monitoring integration**  
+- Compatibility with **explainability (SHAP)**  
+- Readiness for **real-time deployment via API**  
+
+---
+
+## 7. Key Insights
+
+- Fraud detection performance degrades without monitoring  
+- Drift-aware systems maintain **stable performance over time**  
+- Threshold optimization significantly reduces **false positive impact**  
+- Small improvements in recall lead to **significant cost savings**  
+- Explainability enhances **trust and regulatory compliance**  
+
+---
+
+## 8. Business Value & Implications
+
+This system provides:
+
+- **Reduced fraud losses** through improved detection  
+- **Lower operational costs** from fewer false alerts  
+- **Improved customer experience** by minimizing transaction disruptions  
+- **Regulatory compliance** via explainable AI  
+- **Scalable deployment capability** for real-time fraud detection  
+
+---
+
+## 9. Limitations
+
+- Anonymized dataset limits business-specific interpretation  
+- Drift simulation may not fully reflect real-world dynamics  
+- API is deployed locally (not cloud-based)  
+- Model performance depends on data refresh frequency  
+
+---
+
+## 10. Future Work
+
+- Real-time streaming deployment (Kafka, cloud platforms)  
+- Advanced drift detection methods (ADWIN, DDM)  
+- Automated retraining pipelines  
+- Integration with fraud investigation workflows  
+- Dashboard development (Power BI / Streamlit)  
+
+---
+
+## 11. Technologies Used
+
+- Python  
+- Pandas, NumPy  
+- Scikit-learn  
+- LightGBM  
+- SHAP  
+- Matplotlib, Seaborn  
+- FastAPI, Uvicorn  
+- Joblib  
+
+---
+
+## 12. How to Run the Project
+
+### Clone repository
+```bash
+git clone https://github.com/Justine-N/fraud-detection-ml-system.git
+cd fraud-detection-ml-system
+Install dependencies
+pip install -r requirements.txt
+Run notebooks
+
+Execute in order:
+
+Data exploration
 
 Model training
 
-Fraud probability scoring
+Utility optimization
 
-Decision threshold optimisation
+Drift monitoring
 
-Monitoring and drift detection
-
-Automated retraining triggers
-
-Project Structure
-fraud-detection-ml-system
-│
-├── notebooks
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_model_training.ipynb
-│   ├── 03_utility_optimization.ipynb
-│   ├── 04_drift_simulation.ipynb
-│   └── 05_monitoring.ipynb
-=======
-fraud-detection-ml-system
-│
-├── notebooks
-│ ├── 01_data_exploration.ipynb
-│ ├── 02_model_training.ipynb
-│ ├── 03_utility_optimization.ipynb
-│ ├── 04_drift_simulation.ipynb
-│ └── 05_monitoring.ipynb
- (Update README with portfolio positioning)
-│
-├── models
-│ ├── lgbm_champion.pkl
-│ └── lgbm_threshold.json
-│
-├── data
-│ └── creditcard.csv
-│
-├── images
-│ ├── architecture.png
-│ ├── shap_summary.png
-│ └── confusion_matrix.png
-│
-├── app.py
-├── requirements.txt
-└── README.md
-
-Key Features Used by the Model
-
-Fraud detection models rely heavily on transaction behaviour patterns rather than individual features.
-
-The model incorporates several engineered features designed to capture suspicious activity patterns.
-
-Feature Category	Description
-Transaction Amount	Value of the transaction being processed
-Transaction Time	Time-based patterns that may indicate abnormal behaviour
-Account Behaviour	Historical transaction behaviour for the account
-Balance Changes	Differences between previous and current account balances
-Destination Behaviour	Frequency of transactions to specific recipients
-Transaction Velocity	Number of transactions within short time windows
-
-These behavioural indicators help the model detect patterns such as:
-
-Rapid transaction bursts
-
-Unusual transaction sizes
-
-Suspicious balance changes
-
-Transfers to unfamiliar accounts
-
-Feature engineering plays a critical role in improving fraud detection performance and model robustness.
-
-Machine Learning Pipeline
-1. Predictive Modelling
-
- (Update README with portfolio positioning)
-
-
----
-
-## Key Features Used by the Model
-
-Fraud detection models rely heavily on **transaction behaviour patterns** rather than individual variables.
-
-LightGBM was selected as the champion model due to its strong predictive performance and ability to maintain high fraud recall under strict false positive constraints.
-
-2. Utility-Based Decision Optimization
-
-Instead of optimizing the model using traditional metrics such as accuracy, the decision threshold is optimized based on business utility.
-
-The optimization considers:
-
-Fraud losses prevented
-
-Operational costs of false positives
-
-Customer experience impact
-
-This ensures the fraud detection system maximizes financial value while maintaining a strict false positive rate constraint.
-=======
-| Feature Category | Description |
-|----------------|-------------|
-| Transaction Amount | Value of the transaction |
-| Transaction Time | Time-based behaviour patterns |
-| Account Behaviour | Historical activity patterns |
-| Balance Changes | Differences before and after transactions |
-| Destination Behaviour | Frequency of transfers to recipients |
-| Transaction Velocity | Number of transactions within short time windows |
-
-These features help detect patterns such as:
-
-- Rapid transaction bursts  
-- Unusual transaction sizes  
-- Suspicious balance changes  
-- Transfers to unfamiliar accounts  
-
-
-
-## Machine Learning Pipeline
-
-### 1. Predictive Modelling
-
-Models trained and evaluated:
- (Update README with portfolio positioning)
-
-- Logistic Regression  
-- Random Forest  
-- LightGBM  
-
-
-Fraud behaviour evolves over time as attackers adapt to detection systems.
-
-Without monitoring, model performance can deteriorate.
-
-This system includes drift detection mechanisms such as:
-
-LightGBM was selected as the **champion model** due to its strong performance and ability to maintain **high fraud recall under strict false positive constraints**.
-
-
-(Update README with portfolio positioning)
-
-### 2. Utility-Based Decision Optimization
-
-
-KL divergence distribution monitoring
-
-Fraud recall degradation tracking
-
-Instead of optimizing for traditional metrics such as accuracy, the system optimizes **business utility**.
-
-This considers:
-(Update README with portfolio positioning)
-
-- Fraud loss prevention  
-- Cost of false positives  
-- Customer experience impact  
-
-
-Explainability and Model Interpretation
-
-Financial institutions must ensure fraud detection systems are transparent and auditable.
-
-This project uses SHAP (SHapley Additive exPlanations) to explain how individual features influence model predictions.
-
-Explainable AI supports:
-
-Fraud analyst investigation
-
-
-
-### 3. Drift Monitoring
-
-Fraud behaviour evolves over time.
-
-Monitoring techniques include:
-(Update README with portfolio positioning)
-
-- Window-based performance tracking  
-- KL divergence  
-- Recall drop detection  
-
-Retraining is triggered when performance degrades.
-
-
-Improved stakeholder trust
-
-SHAP analysis identifies which transaction characteristics most strongly contribute to fraud predictions, helping analysts understand the model’s decision logic.
-
-Typical influential features include:
-
-Transaction amount anomalies
-
-Rapid transaction frequency
-
-Suspicious balance transitions
-
-Unusual destination account behaviour
-
-Real-Time Fraud Scoring API
-
-The trained model is deployed using FastAPI, enabling real-time scoring of incoming transactions.
-
-Example API response:
-
-
-## Explainability and Model Interpretation
-
-The model uses **SHAP (SHapley Additive exPlanations)** to interpret predictions.
-(Update README with portfolio positioning)
-
-### SHAP Summary Plot
-
-![SHAP Summary](images/shap_summary.png)
-
-Explainability supports:
-
-- Fraud analyst investigation  
-- Model transparency  
-- Regulatory compliance  
-
-Key drivers of fraud predictions include:
-
-- Transaction amount anomalies  
-- High transaction frequency  
-- Balance inconsistencies  
-- Suspicious destination accounts  
-
-
-## Real-Time Fraud Scoring API
-
-The model is deployed using **FastAPI** for real-time transaction scoring.
-
-### Example Response
-
-```json
-{
-  "fraud_probability": 0.00000008,
-  "decision": "APPROVE"
-}
-
-This simulates how fraud detection models are integrated into live payment authorization systems used by banks and payment networks.
-
-Running the API
-Install Dependencies
-pip install -r requirements.txt
-<<<<<<< HEAD
-Start the API Server
-python -m uvicorn app:app --reload
-Access Interactive API Documentation
+Run API
+uvicorn app:app --reload
+Access API
 http://127.0.0.1:8000/docs
+Conclusion
 
-The documentation interface allows users to test fraud scoring requests directly from the browser.
+This project delivers a drift-aware, cost-optimized fraud detection system aligned with real-world banking needs.
 
-Start Server
-python -m uvicorn app:app --reload
-API Docs
-http://127.0.0.1:8000/docs
-(Update README with portfolio positioning)
-Tools and Technologies
+The champion LightGBM model achieved:
 
-Python
+High fraud detection (~83.78%), reducing financial losses
 
-Scikit-Learn
+Low false positive rate (~0.42%), preserving customer experience
 
-LightGBM
+Cost-sensitive optimization, balancing fraud loss and operational cost
 
-SHAP
+Sustained performance under drift, enabling proactive monitoring and retraining
 
-FastAPI
+Business Impact
 
-Pandas
+Reduced fraud losses
 
-NumPy
+Lower operational investigation costs
 
-Matplotlib / Seaborn
+Improved customer trust and retention
 
-Future Improvements
+Enhanced regulatory transparency
 
-Potential enhancements include:
+Scalable real-time fraud detection capability
 
-Real-time streaming fraud detection pipelines
+Final Remark
 
-Automated model retraining pipelines
-Real-time streaming pipelines
-
-Automated retraining
- (Update README with portfolio positioning)
-
-Feature store integration
-
-Monitoring dashboards
-
-Model governance and versioning
-
-Author
-
-Justine Chukwuemeka
-
-MSc Business Analytics — Robert Gordon University
-MSc Business Analytics — Robert Gordon University
-(Update README with portfolio positioning)
+This system demonstrates how machine learning can move beyond prediction to deliver measurable business value, combining detection performance, cost efficiency, and operational resilience in modern fraud prevention systems.
